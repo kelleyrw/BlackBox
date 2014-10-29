@@ -20,7 +20,7 @@ Flow::IO::SystemDefinition const* Flow::IO::ParseSystemDefinitionBuffer(void con
 
     if (verify_buffer == VerifyBuffer::Yes)
     {
-        flatbuffers::Verifier const verifier(reinterpret_cast<std::uint8_t const*>(buffer_ptr), buffer_size);
+        flatbuffers::Verifier verifier(reinterpret_cast<std::uint8_t const*>(buffer_ptr), buffer_size);
         if(!VerifySystemDefinitionBuffer(verifier)) return nullptr;
     }
 
